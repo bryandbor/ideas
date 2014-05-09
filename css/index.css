@@ -1,0 +1,36 @@
+#content {
+    margin-top: 40px;
+}
+
+.profPic {
+    width:100%;
+}
+
+#hoverDiv {
+    display: none;
+    position: absolute;
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#logo {
+    width:100%;
+}
+
+#backgroundImage {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#bgimage {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
