@@ -1,7 +1,7 @@
 <!DOCTYPE HTMP>
 <html>
     <head>
-        <title>Technology Solutions and Ideas</title>
+        <title>Tech Solutions and Ideas</title>
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="build/react.js"></script>
@@ -15,7 +15,7 @@
         
         <div class="navbar navbar-inverse navbar-static-top">
             <div class="container">
-                <a href="index.html" class="navbar-brand">Ideas By B</a>
+                <a href="index.html" class="navbar-brand">Ideas By <img src="images/simpleLogo.png" id="logo"></a>
                 <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -39,21 +39,60 @@
             </div>
         </div>
         <!-- *****************Content Here*************-->
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 col-md-2 col-xs-3">
-                    <img src="images/IdeasbybLogo.png" id="logo">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                        <img src="images/myPic.jpg" class="profPic">
+                    </div>
+                    <div class="col-md-9 col-sm-8">
+                        <p class="">My name is Bryan Bor.  I am a computer science student working towards my bachelor's degree in Computer Science and Software Engineering.  I anticipate graduating from LPC with an Associate's degree in 2005 and transferring to a found year college for my Bachelor's degree.  At the moment, I am looking for internships where I can continue to hone my knowledge of C++, Java, Android & iOS development and continue to develope my project portfolio.</p>
+                    </div>
                 </div>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3 col-md-3 col-xs-3">
-                    <img src="images/myPic.jpg" class="profPic hoverable" hovertext="<img src='images/myPic.jpg' height='400px'>">
+        </div>
+        <div class="projects">
+            <center><h2>Projects</h2></center>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 projects">
+                        <a href="projects.html">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h4>MyGala</h4>
+                                    <p>This project includes a database and matching website for tracking guests and purchases for a charity auction.</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="images/mg2.png" class="projectPic hoverable" hovertext='<img src="images/mg2.png" width="500px">'>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 projects">
+                        <a href="projects.html">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h4>FAQ Web App</h4>
+                                    <p>This project implements a new front-end design language called React.js from the designers of Facebook.com and Instagram.com.</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="images/faq.png" class="projectPic hoverable" hovertext='<img src="images/faq.png" width="500px">'>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-sm-9 col-md-9 col-xs-9">
-                    <p>My name is Bryan Bor. I am a computer science student working towards my bachelor's degree in Computer Science and Software Engineering. I anticipate graduating from LPC with an Associate's degree in 2015 and transferring to a four year college for my Bachelor's degree. At the moment, I am looking for internships where I can continue to hone my knowledge of C++, Java, Android/iOS development and continue to develop my project portfolio.</p>
-                </div>
+            </div>
+            <center><h3>Upcoming Projects...</h3></center>
+            <div class="container">
+                <a href="projects.html">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Task Chat</h4>
+                            <p>This project will be a task-management app for remote workers and supervisors.</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
         <div id="content"></div>

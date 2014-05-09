@@ -6,16 +6,35 @@
     width:100%;
 }
 
+.projectPic {
+    width:100%;
+}
+
+.projects {
+    background-color: #F0F0F0;
+    padding-top: 1px;
+    padding-bottom: 20px;
+}
+
+#introText {
+    font-size: 16px;
+}
+
 #hoverDiv {
     display: none;
     position: absolute;
     background-color: #f0f0f0;
     border: 1px solid black;
     padding: 5px;
+    z-index: 20;
 }
 
 #logo {
-    width:100%;
+    position: relative;
+    top:-5px;
+    left: 0px;
+    z-index: 1000;
+    height: 40px;
 }
 
 #backgroundImage {
