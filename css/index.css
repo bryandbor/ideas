@@ -40,8 +40,17 @@ body{
     margin-bottom: 20px;
 }
 
-#adminButton {
-    height: 34px;
+#admin {
+    width: 20px;
+}
+
+#adminPass {
+    width: 20px;
+    display: none;
+}
+
+#adminEnter {
+    display: none;
 }
 
 #captchaArea {

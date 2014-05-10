@@ -117,7 +117,6 @@ $(document).ready(function(){
     });
     
     $('#contactSubmit').click(function() {
-        alert('starting ajax');
         var uName = encodeURIComponent($('#contact-name').val());
         var uEmail = encodeURIComponent($('#contact-email').val());
         var uMessage = encodeURIComponent($('#contact-message').val());
@@ -141,6 +140,58 @@ $(document).ready(function(){
         }
     });
     
+    $('#admin').focusin(function(){
+        $(this).css('width', '200px');
+    }).focusout(function(){
+        $(this).css('width', '20px');
+    }).keyup(function(){
+        var user = $(this).val();
+        if (user != '') {
+            $('#adminPass').css('display', 'inherit');
+        } else {
+            $('#adminPass').css('display', 'none');
+        }
+    });
+    
+    $('#adminPass').focusin(function(){
+        $(this).css('width', '200px');
+    }).focusout(function(){
+        $(this).css('width', '20px');
+    }).keyup(function(){
+        var pass = $(this).val();
+        if (pass != '') {
+            $('#adminEnter').css('display', 'inline');
+        } else {
+            $('#adminEnter').css('display', 'none');
+        }
+    });
+    
+    $('#adminEnter').click(function(){
+        alert('admin logging process');
+        var user = $('#admin').val();
+        var pass = $('#adminPass').val();
+        var params = 'user='+user+'&pass='+pass;
+        var xmlHttp;
+        if (window.ActiveXObject) { xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');}
+        else xmlHttp = new XMLHttpRequest;
+        if (xmlHttp.readyState == 0 || xmlHttp.readyState == 4) {
+            xmlHttp.open('POST', 'adminLogin.php', true);
+            xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xmlHttp.setRequestHeader('Content-length', params.length);
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    if (xmlHttp.responseText == 'success') {
+                        alert('Successful login');
+                    }
+                } else if (xmlHttp.readyState == 4 && xmlHttp.status != 200) {
+                    alert('Error checking admin credentials.');
+                }
+            };
+            xmlHttp.send(params);
+        }
+    }).ready(function(){
+        alert('button ready');
+    });
 });
 
 $(".hoverable").mousemove( function(e) {
