@@ -116,12 +116,29 @@ $(document).ready(function(){
         }
     });
     
-    $('#contactForm').submit(function() {
-        alert
-        var uName = $('#contact-name').val();
-        var uEmail = $('#contact-email').val();
-        var uMessage = $('#contact-message').val();
+    $('#contactSubmit').click(function() {
+        alert('starting ajax');
+        var uName = encodeURIComponent($('#contact-name').val());
+        var uEmail = encodeURIComponent($('#contact-email').val());
+        var uMessage = encodeURIComponent($('#contact-message').val());
+        var params = 'name='+uName+'&email='+uEmail+'&message='+uMessage;
         //Send email to webmaster
+        var xmlHttp;
+        if (window.ActiveXObject) xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        else xmlHttp = new XMLHttpRequest;
+        if (xmlHttp.readyState == 0 || xmlHttp.readyState == 4) {
+            xmlHttp.open('POST', 'send.php', true);
+            xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xmlHttp.setRequestHeader('Content-length', params.length);
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    alert(xmlHttp.responseText);
+                } else if (xmlHttp.readyState == 4 && xmlHttp.status != 200) {
+                    alert('Error: '+xmlHttp.status)
+                }
+            };
+            xmlHttp.send(params);
+        }
     });
     
 });
