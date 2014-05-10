@@ -33,7 +33,7 @@
                             </ul>
                         </li>
                         <li><a href="resume.html">Resume</a></li>
-                        <li><a href="contactme.html">Contact Me</a></li>
+                        <li><a href="#contact" data-toggle="modal">Contact Me</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                         <img src="images/myPic.jpg" class="profPic">
                     </div>
                     <div class="col-md-9 col-sm-8">
-                        <p class="">My name is Bryan Bor.  I am a computer science student working towards my bachelor's degree in Computer Science and Software Engineering.  I anticipate graduating from LPC with an Associate's degree in 2005 and transferring to a found year college for my Bachelor's degree.  At the moment, I am looking for internships where I can continue to hone my knowledge of C++, Java, Android & iOS development and continue to develope my project portfolio.</p>
+                        <p id="introText">My name is Bryan Bor.  I am a computer science student working towards my bachelor's degree in Computer Science and Software Engineering.  I anticipate graduating from LPC with an Associate's degree in 2005 and transferring to a found year college for my Bachelor's degree.  At the moment, I am looking for internships where I can continue to hone my knowledge of C++, Java, Android & iOS development and continue to develope my project portfolio.</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                                     <p>This project includes a database and matching website for tracking guests and purchases for a charity auction.</p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <img src="images/mg2.png" class="projectPic hoverable" hovertext='<img src="images/mg2.png" width="500px">'>
+                                    <img src="images/mg2.png" class="projectPic hoverable" hovertext='<img src="images/mg2.png" width="600px">'>
                                 </div>
                             </div>
                         </a>
@@ -76,7 +76,7 @@
                                     <p>This project implements a new front-end design language called React.js from the designers of Facebook.com and Instagram.com.</p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <img src="images/faq.png" class="projectPic hoverable" hovertext='<img src="images/faq.png" width="500px">'>
+                                    <img src="images/faq.png" class="projectPic hoverable" hovertext='<img src="images/faq.png" width="600px">'>
                                 </div>
                             </div>
                         </a>
@@ -115,11 +115,51 @@
                 <a class="pull-right" href="https://www.linkedin.com/profile/view?id=249460006&trk=nav_responsive_tab_profile">
                     <img class="navbar-btn" src="images/linkedin.png" height="40">
                 </a>
-                <a class="pull-right" href="https://angel.com/bryan-bor">
+                <a class="pull-right" href="https://angel.co/bryan-bor">
                     <img class="navbar-btn" src="images/angellist.jpg" height="40">
                 </a>
             </div>
         </div>
+		
+		<div class="modal fade" id="contact" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form class="form-horizontal" id="contactForm">
+                        <div class="modal-header">
+                            <h4>Contact Me</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group has-error has-feedback" id="formNameGroup">
+                                <label for="contact-name" class="col-lg-2 control-label">Name:</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="contact-name" placeholder="Full name" autofocus>
+                                    <span class="glyphicon glyphicon-remove form-control-feedback" id="formNameGlyph"></span>
+                                </div>
+                            </div>
+                            <div class="form-group has-error has-feedback" id="formEmailGroup">
+                                <label for="contact-email" class="col-lg-2 control-label">E-mail:</label>
+                                <div class="col-lg-10">
+                                    <input type="email" class="form-control" id="contact-email" placeholder="you@somewhere.com">
+                                    <span class="glyphicon glyphicon-remove form-control-feedback" id="formEmailGlyph"></span>
+                                </div>
+                            </div>
+                            <div class="form-group has-error has-feedback" id="formMessageGroup">
+                                <label for="contact-message" class="col-lg-2 control-label">Message:</label>
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" rows="6" placeholder="Your message here." id="contact-message"></textarea>
+                                    <span class="glyphicon glyphicon-remove form-control-feedback" id="formMessageGlyph"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary disabled" type="submit" id="contactSubmit">Send Message</button>
+                            <a class="btn btn-default" data-dismiss="modal">Close</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+		
         <script src="js/indexJquery.js" type="text/javascript"></script>    
     </body>
 </html>

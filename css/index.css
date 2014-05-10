@@ -2,6 +2,11 @@
     margin-top: 40px;
 }
 
+body{
+    display: none;
+    margin-bottom: 80px;
+}
+
 .profPic {
     width:100%;
 }
@@ -16,8 +21,52 @@
     padding-bottom: 20px;
 }
 
+.projectFeatures {
+    padding-left: 20px;
+    list-style-type: circle;
+}
+
+.projectHeading {
+    margin-top: 0px;
+}
+
+.resume {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.experience {
+    margin-bottom: 20px;
+}
+
+#adminButton {
+    height: 34px;
+}
+
+#captchaArea {
+    margin-bottom: 50px;
+}
+
+#captchaInput {
+    width:100%;
+    font-size: 28px;
+}
+
+#constructionIntro {
+    margin-top: 30px;
+}
+
+#underConstruction {
+    font-size: 28px;
+}
+
 #introText {
     font-size: 16px;
+}
+
+#projectTitle {
+    margin-bottom: 2px;
 }
 
 #hoverDiv {
@@ -40,7 +89,7 @@
 #projectList {
     margin-left: 15px;
     margin-right: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
     background-color: white;
 }
 
