@@ -189,8 +189,6 @@ $(document).ready(function(){
             };
             xmlHttp.send(params);
         }
-    }).ready(function(){
-        alert('button ready');
     });
 });
 

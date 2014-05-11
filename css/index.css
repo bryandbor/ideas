@@ -102,6 +102,14 @@ body{
     background-color: white;
 }
 
+#linkedin {
+    margin-top: 8px;
+}
+
+#angels {
+    margin-top: 8px;
+}
+
 #backgroundImage {
     position: absolute;
     top: 0px;

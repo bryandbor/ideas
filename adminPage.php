@@ -1,3 +1,11 @@
+<?php
+    $_SESSION['user'] = 'ideasAdmin';
+    $_SESSION['pass'] = 'ideas@Greellow8';
+    if (!isset($_SESSION['user'], $_SESSION['pass'])) {
+        header('Location: index.html');
+    }
+?>
+
 <!DOCTYPE HTMP>
 <html>
     <head>
@@ -39,95 +47,40 @@
             </div>
         </div>
         <!-- *****************Content Here*************-->
-        <div class="jumbotron">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                        <img src="images/myPic.jpg" class="profPic">
-                    </div>
-                    <div class="col-md-9 col-sm-8">
-                        <p id="introText">My name is Bryan Bor.  I am a computer science student working towards my bachelor's degree in Computer Science and Software Engineering.  I anticipate graduating from LPC with an Associate's degree in 2005 and transferring to a found year college for my Bachelor's degree.  At the moment, I am looking for internships where I can continue to hone my knowledge of C++, Java, Android & iOS development and continue to develope my project portfolio.</p>
-                    </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="text-center">Admin</h3>
                 </div>
             </div>
-        </div>
-        <div class="projects">
-            <center><h2>Projects</h2></center>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 projects">
-                        <a href="projects.html">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <h4>MyGala</h4>
-                                    <p>This project includes a database and matching website for tracking guests and purchases for a charity auction.</p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <img src="images/mg2.png" class="projectPic hoverable" hovertext='<img src="images/mg2.png" width="600px">'>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6 projects">
-                        <a href="projects.html">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <h4>FAQ Machine</h4>
-                                    <p>This project implements a new front-end design language called React.js from the designers of Facebook.com and Instagram.com.</p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <img src="images/faq.png" class="projectPic hoverable" hovertext='<img src="images/faq.png" width="600px">'>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table-hover table-bordered" width="100%">
+                        <tr>
+                            <th><p class="text-center">IP Address</p></th>
+                            <th><p class="text-center">First Visit</p></th>
+                            <th><p class="text-center">Latest Visit</p></th>
+                        </tr>
+                        <div id="content"></div>
+                    </table>
                 </div>
             </div>
-            <center><h3>Upcoming Projects...</h3></center>
-            <div class="container">
-                <a href="projects.html">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>Task Chat</h4>
-                            <p>This project will be a task-management app for remote workers and supervisors.</p>
-                        </div>
-                    </div>
-                </a>
+            <div id="content">
             </div>
         </div>
-        <div id="content"></div>
-        
-        <div id="hoverDiv"></div>
-        
-        <table id="backgroundImage">
-            <tr>
-                <td>
-                    <img src="images/drawingBackground.jpg" id="bgimage">
-                </td>
-            </tr>
-        </table>
         
         <!-- ***************END OF CONTENT************** -->
         
         <div class="navbar navbar-inverse navbar-fixed-bottom">
             <div class="container">
                 <p class="navbar-text pull-left">Site Built By Bryan Bor</p>
-                <a class="pull-right" href="https://www.linkedin.com/profile/view?id=249460006&trk=nav_responsive_tab_profile" id="linkedin">
+                <a class="pull-right" href="https://www.linkedin.com/profile/view?id=249460006&trk=nav_responsive_tab_profile">
                     <img class="navbar-btn" src="images/linkedin.png" height="40">
                 </a>
-                <a class="pull-right" href="https://angel.co/bryan-bor" id="angels">
+                <a class="pull-right" href="https://angel.co/bryan-bor">
                     <img class="navbar-btn" src="images/angellist.jpg" height="40">
                 </a>
-                <form class="navbar-form pull-right">
-                    <div class="form-group pull-left">
-                        <input type="text" id="admin" class="form-control pull-left" placeholder="Admin Username">
-                    </div>
-                    <button type="button" class="btn btn-default pull-right" id="adminEnter">Log In</button>
-                    <div class="form-group pull-right">
-                        <input type="password" id="adminPass" class="form-control pull-right" placeholder="Password">
-                    </div>
-                </form>
-                <p class="navbar-text pull-right">Admin:</p>
             </div>
         </div>
 		
