@@ -56,17 +56,14 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <table class="table-hover table-bordered" width="100%">
+                    <table class="table-hover table-bordered" id="content" width="100%">
                         <tr>
                             <th><p class="text-center">IP Address</p></th>
                             <th><p class="text-center">First Visit</p></th>
                             <th><p class="text-center">Latest Visit</p></th>
                         </tr>
-                        <div id="content"></div>
                     </table>
                 </div>
-            </div>
-            <div id="content">
             </div>
         </div>
         
@@ -123,6 +120,7 @@
             </div>
         </div>
 		
-        <script src="js/indexJquery.js" type="text/javascript"></script>    
+        <script src="js/indexJquery.js" type="text/javascript"></script>
+        <script src="js/adminJquery.js" type="text/javascript"></script>
     </body>
 </html>

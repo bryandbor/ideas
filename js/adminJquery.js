@@ -5,7 +5,7 @@ $(document).ready(function(){
     if (xmlHttp.readyState == 0 || xmlHttp.readyState == 4) {
         var user = 'admin';
         var pass = 'pass';
-        var params = 'user='+admin+'&pass='+pass;
+        var params = 'user='+user+'&pass='+pass;
         xmlHttp.open('POST', 'visitors.php', true);
         xmlHttp.setRequestHeader('Content-length', params.length);
         xmlHttp.onreadystatechange = function(){
