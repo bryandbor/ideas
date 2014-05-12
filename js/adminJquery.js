@@ -3,11 +3,7 @@ $(document).ready(function(){
     if (window.ActiveXObject) xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
     else xmlHttp = new XMLHttpRequest;
     if (xmlHttp.readyState == 0 || xmlHttp.readyState == 4) {
-        var user = 'admin';
-        var pass = 'pass';
-        var params = 'user='+user+'&pass='+pass;
         xmlHttp.open('POST', 'visitors.php', true);
-        xmlHttp.setRequestHeader('Content-length', params.length);
         xmlHttp.onreadystatechange = function(){
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                 var data = JSON.parse(xmlHttp.responseText);
@@ -22,6 +18,6 @@ $(document).ready(function(){
                 alert('There was an error downloading the visitors list.');
             }
         };
-        xmlHttp.send(params);
+        xmlHttp.send(null);
     }
 });

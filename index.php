@@ -1,3 +1,32 @@
+<?php
+	function getUserIP() {
+		if( array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER) && !empty($_SERVER['HTTP_X_FORWARDED_FOR']) ) {
+			if (strpos($_SERVER['HTTP_X_FORWARDED_FOR'], ',')>0) {
+				$addr = explode(",",$_SERVER['HTTP_X_FORWARDED_FOR']);
+				return trim($addr[0]);
+			} else {
+				return $_SERVER['HTTP_X_FORWARDED_FOR'];
+			}
+		}
+		else {
+			return $_SERVER['REMOTE_ADDR'];
+		}
+	}
+
+	$connection = mysql_connect('localhost', 'root', '@Greellow8') or die(mysql_error());
+	mysql_select_db('ideasDB', $connection);
+	$ip = getUserIP();
+	$query = "SELECT * FROM Visitors WHERE ip = '".$ip."'";
+	$results = mysql_query($query, $connection);
+	if (!mysql_fetch_row($results)) {
+		$query = "INSERT INTO Visitors (ip, latest_visit) VALUES ('".$ip."', NOW())";
+		mysql_query($query, $connection);
+	} else {
+		$query = "UPDATE Visitors SET latest_visit = NOW() WHERE ip='".$ip."'";
+		mysql_query($query, $connection);
+	}
+?>
+
 <!DOCTYPE HTMP>
 <html>
     <head>
@@ -7,7 +36,6 @@
         <script src="build/react.js"></script>
         <script src="build/JSXTransformer.js"></script>
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <script type="text/jsx" src="js/index.js"></script>
     </head>
     <body>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -15,7 +43,7 @@
         
         <div class="navbar navbar-inverse navbar-static-top">
             <div class="container">
-                <a href="index.html" class="navbar-brand">Ideas By <img src="images/simpleLogo.png" id="logo"></a>
+                <a href="index.php" class="navbar-brand">Ideas By <img src="images/simpleLogo.png" id="logo"></a>
                 <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -23,7 +51,7 @@
                 </button>
                 <div class="collapse navbar-collapse navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="index.php">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -167,6 +195,11 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+        <div class="container" id="adminAlert">
+            <div class="alert alert-danger">
+                <p class="text-center">Invalid username and/or password.</p>
             </div>
         </div>
 		

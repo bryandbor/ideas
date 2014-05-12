@@ -167,24 +167,24 @@ $(document).ready(function(){
     });
     
     $('#adminEnter').click(function(){
-        alert('admin logging process');
-        var user = $('#admin').val();
-        var pass = $('#adminPass').val();
+        var user = encodeURIComponent($('#admin').val());
+        var pass = encodeURIComponent($('#adminPass').val());
         var params = 'user='+user+'&pass='+pass;
         var xmlHttp;
         if (window.ActiveXObject) { xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');}
         else xmlHttp = new XMLHttpRequest;
         if (xmlHttp.readyState == 0 || xmlHttp.readyState == 4) {
-            xmlHttp.open('POST', 'adminLogin.php', true);
+            xmlHttp.open('POST', 'http://localhost/ideasbyb2/ideas/adminLogin.php', true);
             xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xmlHttp.setRequestHeader('Content-length', params.length);
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                     if (xmlHttp.responseText == 'success') {
-                        alert('Successful login');
+                        window.location.assign('adminPage.php');
+                    } else {
+                        $('#adminAlert').fadeIn('fast').delay(1000).fadeOut('fast');;
                     }
                 } else if (xmlHttp.readyState == 4 && xmlHttp.status != 200) {
-                    alert('Error checking admin credentials.');
+                    alert('Error checking admin credentials. Status: '+xmlHttp.status);
                 }
             };
             xmlHttp.send(params);

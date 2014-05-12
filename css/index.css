@@ -102,12 +102,19 @@ body{
     background-color: white;
 }
 
+#adminAlert {
+    position: absolute;
+    bottom: 50px;
+    display: none;
+    right: 5%;
+}
+
 #linkedin {
-    margin-top: 8px;
+    
 }
 
 #angels {
-    margin-top: 8px;
+    
 }
 
 #backgroundImage {

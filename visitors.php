@@ -1,4 +1,11 @@
 <?php
+    session_start();
+    if (!isset($_SESSION['user'], $_SESSION['pass'])) {
+        header('Location: index.html');
+    }
+    if ($_SESSION['user'] != 'ideasAdmin' || $_SESSION['pass'] != 'ideas@Greellow8') {
+        header('Location: index.html');
+    }
     header('Content-Type: application/json');
     $connection = mysql_connect('localhost', 'root', '@Greellow8');
     mysql_select_db('ideasDB', $connection);
