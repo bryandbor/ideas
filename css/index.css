@@ -41,6 +41,7 @@ body{
 }
 
 #admin {
+    margin-left: 20px;
     width: 20px;
 }
 
@@ -51,15 +52,6 @@ body{
 
 #adminEnter {
     display: none;
-}
-
-#captchaArea {
-    margin-bottom: 50px;
-}
-
-#captchaInput {
-    width:100%;
-    font-size: 28px;
 }
 
 #constructionIntro {
@@ -109,12 +101,21 @@ body{
     right: 5%;
 }
 
+#adminForm{
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+#adminLabel{
+    margin-top: 8px;
+}
+
 #linkedin {
-    
+    height: 36px;
 }
 
 #angels {
-    
+    height: 36px;
 }
 
 #backgroundImage {

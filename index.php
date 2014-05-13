@@ -140,13 +140,14 @@
         <div class="navbar navbar-inverse navbar-fixed-bottom">
             <div class="container">
                 <p class="navbar-text pull-left">Site Built By Bryan Bor</p>
-                <a class="pull-right" href="https://www.linkedin.com/profile/view?id=249460006&trk=nav_responsive_tab_profile" id="linkedin">
-                    <img class="navbar-btn" src="images/linkedin.png" height="40">
+                <a class="pull-right" href="https://www.linkedin.com/profile/view?id=249460006&trk=nav_responsive_tab_profile">
+                    <img class="navbar-btn" src="images/linkedin.png" height="40" id="linkedin">
                 </a>
-                <a class="pull-right" href="https://angel.co/bryan-bor" id="angels">
-                    <img class="navbar-btn" src="images/angellist.jpg" height="40">
+                <a class="pull-right" href="https://angel.co/bryan-bor">
+                    <img class="navbar-btn" src="images/angellist.jpg" height="40" id="angels">
                 </a>
-                <form class="navbar-form pull-right">
+                <form class="pull-right" id="adminForm">
+                    <p class="pull-left navbar-text" id="adminLabel">Admin:</p>
                     <div class="form-group pull-left">
                         <input type="text" id="admin" class="form-control pull-left" placeholder="Admin Username">
                     </div>
@@ -155,7 +156,6 @@
                         <input type="password" id="adminPass" class="form-control pull-right" placeholder="Password">
                     </div>
                 </form>
-                <p class="navbar-text pull-right">Admin:</p>
             </div>
         </div>
 		
